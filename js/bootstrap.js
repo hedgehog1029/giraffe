@@ -1,7 +1,7 @@
 ! function() {
     var GIRAFFE = {
-        "DOMAIN" = "imgur.com",
-        "SCRIPT_URL" = "https://hedgehog1029.github.io/giraffe/mirror/main.js"
+        "DOMAIN": "imgur.com",
+        "SCRIPT_URL": "https://hedgehog1029.github.io/giraffe/mirror/main.js"
     }
 
     function isSiteValid() {
