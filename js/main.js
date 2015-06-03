@@ -8,9 +8,9 @@ var defaults = {
     "CUSTOM_CSS": ""
   },
   "CUSTOMIZATION": {
-    ""
+    
   }
-}
+};
 
 var settings = {};
 
@@ -20,14 +20,31 @@ function loadSettingsFromCookies() {
   settings.SETTINGS.CUSTOM_CSS = getCookie("0x121") | defaults.SETTINGS.CUSTOM_CSS;
 }
 
+function saveSettings() {
+  setCookie("0x211", settings.SETTINGS.LOADING_GIF["24"]);
+  setCookie("0x212", settings.SETTINGS.LOADING_GIF["48"]);
+  setCookie("0x121", settings.SETTINGS.CUSTOM_CSS);
+}
+
 function applySettings() {
-  if (settings.SETTINGS.LOADING_GIF["24"]) {
-    
+  if (settings.SETTINGS.LOADING_GIF["24"] !== null && settings.SETTINGS.LOADING_GIF["48"] !== null) {
+    applyLoader(settings.SETTINGS.LOADING_GIF["24"], settings.SETTINGS.LOADING_GIF["48"]);
+  }
+  
+  if (settings.SETTINGS.CUSTOM_CSS !== "") {
+    loadCSS(settings.SETTINGS.CUSTOM_CSS);
   }
 }
 
-function applyLoader(url) {
+function applyLoader(url24, url48) {
   
+}
+
+function loadCSS(id, href) {
+  var css = document.createElement("link");
+  css.setAttribute("id", id);
+  css.setAttribute("href", href);
+  document.head.appendChild(css);
 }
 
 function getCookie(id) {
