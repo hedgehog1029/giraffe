@@ -1,4 +1,4 @@
-! function() {
+(function() {
     var GIRAFFE_BOOTSTRAP = {
         "DOMAIN": "imgur.com",
         "SCRIPT_URL": "https://hedgehog1029.github.io/giraffe/mirror/main.js"
@@ -31,4 +31,4 @@
     };
     
     GIRAFFE_BOOTSTRAP.FUNCTIONS.init();
-}();
+})();
